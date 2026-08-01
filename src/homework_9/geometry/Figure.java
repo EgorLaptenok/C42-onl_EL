@@ -1,12 +1,8 @@
 package homework_9.geometry;
 
-abstract class Figure {
-    double square;
-    double perimeter;
-    public double getPerimeter() {
-        return perimeter;
-    }
-    public double getSquare() {
-        return square;
-    }
+public abstract class Figure {
+    public abstract double getPerimeter();
+    public abstract double getSquare();
+    public abstract String getName();
+
 }

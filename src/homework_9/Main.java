@@ -5,6 +5,9 @@ import homework_9.company.Director;
 import homework_9.company.Employee;
 import homework_9.company.Worker;
 import homework_9.geometry.Circle;
+import homework_9.geometry.Figure;
+import homework_9.geometry.Rectangle;
+import homework_9.geometry.Triangle;
 
 import java.util.ArrayList;
 
@@ -31,9 +34,21 @@ public class Main {
             System.out.println(namePosition.getPositions());
         }
         //Задача 2:
-        Circle circle = new Circle(10);
-        circle.setPerimeter();
-        System.out.println(circle.getPerimeter());
+        double perimeterAllFigures = 0;
+        ArrayList<Figure> figures = new ArrayList<>();
+        figures.add(new Circle(15));
+        figures.add(new Rectangle(7,10));
+        figures.add(new Triangle(7,5, 7));
+        figures.add(new Circle(12));
+        figures.add(new Triangle(5,5, 5));
+        System.out.println("__________________");
+        for (Figure f: figures){
+            System.out.println(f.getName() + ":");
+            System.out.println("\tпериметр: " + f.getPerimeter() + "\n\tплощадь: " + f.getSquare());
+            System.out.println("__________________");
+            perimeterAllFigures += f.getPerimeter();
+        }
+        System.out.println("Периметр всех фигур: " + perimeterAllFigures);
     }
 
 }
